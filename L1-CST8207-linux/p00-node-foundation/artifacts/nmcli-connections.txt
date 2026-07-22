@@ -1,0 +1,5 @@
+NAME                UUID                                  TYPE      DEVICE  
+Wired connection 1  40017c59-7abc-3c63-bb44-7e4ee1d78bb1  ethernet  eth0    
+docker0             b5d2bad3-4c20-412f-9030-c3a50087abc6  bridge    docker0 
+lo                  d0d943df-d5ed-4624-b43c-702b2a8a1ca2  loopback  lo      
+iPhone              a04ae828-cdc2-43a1-9fd5-ee7b2f56f6b8  wifi      --      

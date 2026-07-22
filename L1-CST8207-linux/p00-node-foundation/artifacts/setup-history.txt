@@ -1,0 +1,137 @@
+    1  ip a
+    2  nmcli connection modify iPhone ipv4.method manual ipv4.addresses 172.20.10.10/28 \
+    3  sudo nmcli connection modify iPhone ipv4.method manual ipv4.addresses 172.20.10.10/28 \
+    4  nmcli dev wifi
+    5  nmcli connection show iPhone
+    6  ip a
+    7  nmcli connection up iPhone
+    8  sudo nmcli connection up iPhone
+    9  ip a
+   10  nmcli dev wifi
+   11  nmcli dev wifi lis
+   12  nmcli dev wifi list
+   13  man nmcli
+   14  nmcli connection show
+   15  nmcli dev wifi status
+   16  nmcli connection show wifi
+   17  nmcli connection show "Wired Connection"
+   18  nmcli connection show lo
+   19  nmcli connection modify 
+   20  man nmcli
+   21  man nmcli
+   22  nmcli connection show
+   23  nmcli dev wifi status
+   24  nmcli dev wifi
+   25  man nmcli
+   26  nmcli device status
+   27  man nmcli
+   28  man nmcli
+   29  nmcli connection con iPhone password P@ssWord name "iPhone"
+   30  man nmcli
+   31  man nmcli
+   32  nmcli dev wifi con "iPhone" password P@ssWord name iPhone
+   33  man nmcli
+   34  man nmcli
+   35  nmcli dev wifi
+   36  man nmcli
+   37  nmcli radio wifi-off
+   38  man nmcli
+   39  nmcli radio wifi off
+   40  sudo nmcli radio wifi off
+   41  sudo nmcli radio wifi on
+   42  nmcli dev wifi
+   43  nmcli dev wifi con "iPhone" password "P@ssWord" name "iPhone"
+   44  sudo nmcli dev wifi con "iPhone" password "P@ssWord" name "iPhone"
+   45  ip a
+   46  ls
+   47  ls -a
+   48  cd ./.ssh
+   49  ls
+   50  cat ./id_ed25519.pub 
+   51  cat ./authorized_keys 
+   52  cat ./id_ed25519.pub > ./authorized_keys 
+   53  cat ./authorized_keys 
+   54  visudo /etc/ssh/sshd_config
+   55  sudo visudo /etc/ssh/sshd_config
+   56  sudo systemctl restart ssh
+   57  cd ~
+   58  sudo apt install ufw -y
+   59  sudo ufw default deny incoming
+   60  sudo ufw default allow outgoing
+   61  sudo ufw allow OpenSSH
+   62  sudo ufw enable
+   63  sudo ufw status verbose
+   64  sudo apt install fail2ban -y
+   65  sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+   66  sudo systemctl enable --now fail2ban
+   67  sudo fail2ban-client status sshd
+   68  sudo apt install unattended-upgrades -y
+   69  sudo dpkg-reconfigure -plow unattended-upgrades
+   70  timedatectl
+   71  sudo timedatectl set-ntp true
+   72  timedatectl
+   73  man timedatectl
+   74  list-timezone
+   75  timedatectl --list-timezone
+   76  timedatectl --list-timezones
+   77  man timedatectl
+   78  timedatectl list-timezones
+   79  timedatectl set-timezone America/Toronto
+   80  timedatectl
+   81  sudo apt install -y git vim htop curl wget net-tools dnsutils
+   82  git config --global user.name "RedjiJB"
+   83  git config --global user.email "redji.jeanbaptiste@mail.utoronto.ca"
+   84  ssh-keygen -t ed25519 -C "dc-node-01"
+   85  ssh -T git@github.com
+   86  cat ~/.ssh/id_ed25519.pub
+   87  clear
+   88  ssh -T git@github.com
+   89  mkdir -p ~/cst-portfolio && cd ~/cst-portfolio
+   90  git init
+   91  mkdir -p L1-CST8207-linux/p00-node-foundation/{artifacts,evidence}
+   92  git add . && git commit -m "P00: node foundation baseline"
+   93  ssh -T git@github.com
+   94  curl -fsSL https://get.docker.com | sh
+   95  sudo usermod -aG docker $USER
+   96  docker run --rm hello-world
+   97  sudo docker run --rm hello-world
+   98  docker compose version
+   99  exit
+  100  chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys && ls -la ~/.ssh
+  101  sudo tee /etc/ssh/sshd_config.d/99-dc-hardening.conf > /dev/null << 'EOF'
+  102  PermitRootLogin no
+  103  PasswordAuthentication no
+  104  PubkeyAuthentication yes
+  105  LbdInterativeAuthentication no
+  106  EOF
+  107  sudo sshd -t && echo "CONFIG OK"
+  108  sudo tee /etc/ssh/sshd_config.d/99-dc-hardening.conf >/dev/null <<'EOF'
+  109  PermitRootLogin no
+  110  PasswordAuthentication no
+  111  PubkeyAuthentication yes
+  112  KbdInteractiveAuthentication no
+  113  EOF
+  114  sudo sshd -t && echo "CONFIG OK"
+  115  sudo sshd -T | grep -E 'permitrootlogin|passwordauthentication|pubkeyauthentication|kbdinteractive'
+  116  sudo nmcli connection show
+  117  sudo connection modify "Wired Connection 1" ipv4.dns "8.8.8.8 8.8.4.4"
+  118  sudo nmcli connection modify "Wired Connection 1" ipv4.dns "8.8.8.8 8.8.4.4"
+  119  sudo nmcli connection modify "Wired connection 1" ipv4.dns "8.8.8.8 8.8.4.4"
+  120  sudo nmcli connection up "Wired connection 1"
+  121  resolvectl status | grep -A3 "DNS Servers"
+  122  getent passwd redji && groups redji && sudo lastlog -u redji
+  123  sudo usermod -aG docker $USER
+  124  newgrp docker
+  125  docker run --rm hello-world
+  126  groups testuser1 && sudo passwd -S testuser1
+  127  sudo reboot
+  128  sudo sshd -T | grep -E 'permitrootlogin|passwordauthentication|pubkeyauthentication'
+  129  ssh -o PreferredAuthentication=password -o PubkeyAuthentication=no admin@192.168.1.1
+  130  ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no admin@192.168.1.1
+  131  visudo ~/.ssh/sshd/sshd_config
+  132  visudo etc/.ssh/sshd/sshd_config
+  133  visudo etc/hosts/.ssh/sshd/sshd_config
+  134  ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no admin@192.168.1.1
+  135  hostnamectl && timedatectl && sudo sshd -T | grep -E 'permitrootlogin|passwordauthentication' && sudo ufw status verbose && sudo fail2ban-client status sshd && sudo systemctl is-enabled ssh docker fail2ban unattended-upgrades && docker run --rm hello-world
+  136  mkdir -p ~/cst-portfolio/L1-CST8207-linux/p00-node-foundation/{artifacts,evidence}
+  137  cd ~/cst-portfolio/L1-CST8207-linux/p00-node-foundation && history > artifacts/setup-history.txt && sudo sshd -T > artifacts/sshd-effective.txt && sudo ufw status verbose > artifacts/ufw-status.txt && sudo fail2ban-client status sshd > artifacts/fail2ban-status.txt && nmcli connection show > artifacts/nmcli-connections.txt && cat /etc/apt/apt.conf.d/20auto-upgrades > artifacts/auto-upgrades.txt
